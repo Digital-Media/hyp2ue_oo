@@ -1,5 +1,5 @@
 <?php
-namespace phpintro\src\exercises\oophp;
+namespace hyp2ue_t1_ue2_oo;
 /**
  * This class should not be able to do more than printing the content of $_POST sent by index.html.
  * Additionally a class constant and a class property is defined.
