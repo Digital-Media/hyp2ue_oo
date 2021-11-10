@@ -9,8 +9,8 @@
 <p>Learning OO PHP</p>
 <h2>Adding visit</h2>
 <form action="StoreFormInput.php" method="post">
-    <label for="ipaddress">Product Category:</label>
-    <input type="text" name="ipaddress" id="ipaddress" placeholder="insert an ipaddress">
+    <label for="ip_address">Product Category:</label>
+    <input type="text" name="ip_address" id="ip_address" placeholder="insert an ipaddress">
     <button type="submit">Submit</button>
 </form>
 </body>
@@ -36,8 +36,8 @@ class StoreFormInput
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
             // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
             PDO::MYSQL_ATTR_INIT_COMMAND => $charsetAttr,
             PDO::MYSQL_ATTR_MULTI_STATEMENTS => $multi
@@ -45,7 +45,7 @@ class StoreFormInput
         try {
             $this->dbh = new PDO($dsn, $mysqlUser, $mysqlPwd, $options);
         } catch (PDOException $e) {
-            echo "$e->getMessage()";
+            var_dump($e->errorInfo);
         }
         echo "<p>Connect to Database worked</p>";
     }
@@ -54,42 +54,42 @@ class StoreFormInput
     {
         $query = <<<SQL
              INSERT INTO visit
-             SET ipaddress = :ipaddress,
+             SET ip_address = :ip_address,
                  timestamp = now()
         SQL;
         echo "<p>$query</p>";
-        $params=array(':ipaddress' => $_POST['ipaddress']);
+        $params=array(':ip_address' => $_POST['ip_address']);
         try {
             if ($this->dbh) {
                 $this->stmt = $this->dbh->prepare($query);
                 $this->stmt->execute($params);
             }
         } catch (PDOException $e) {
-            throw new DatabaseException($e->getMessage());
+            var_dump($e->errorInfo);
         }
     }
 
     private function Retrieve()
     {
         $query = <<<SQL
-             SELECT ipaddress, timestamp
+             SELECT ip_address, timestamp
              FROM visit 
-             WHERE ipaddress = :ipaddress
+             WHERE ip_address = :ip_address
         SQL;
         echo "<p>$query</p>";
-        $params=array(':ipaddress' => $_POST['ipaddress']);
+        $params=array(':ip_address' => $_POST['ip_address']);
         try {
             if ($this->dbh) {
                 $this->stmt = $this->dbh->prepare($query);
                 $this->result=$this->stmt->execute($params);
                 $this->result = $this->stmt->fetchAll();
                 var_dump($this->result);
-                // echo $this->result[0]['ipaddress'];
-                // echo $this->result[0]->ipaddress;
-                echo $this->result[0][0];
+                // echo $this->result[0]['ip_address'];
+                echo $this->result[0]->ip_address;
+                // echo $this->result[0][0];
             }
         } catch (PDOException $e) {
-            throw new DatabaseException($e->getMessage());
+            var_dump($e->errorInfo);
         }
     }
 
@@ -102,4 +102,7 @@ class StoreFormInput
     }
 }
 $showFormInput = new StoreFormInput();
-$showFormInput->StoreAndRetrieve();
+if (isset($_POST['ip_address'])) {
+    $showFormInput->StoreAndRetrieve();
+
+}
