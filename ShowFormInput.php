@@ -1,5 +1,5 @@
 <?php
-namespace hyp2ue_t1_ue2_oo;
+namespace hyp2ue_oo;
 /**
  * This class should not be able to do more than printing the content of $_POST sent by index.html.
  * Additionally a class constant and a class property is defined.
@@ -15,7 +15,7 @@ namespace hyp2ue_t1_ue2_oo;
  */
 require_once 'error_handling.php';
 /**
- * TODO Have a look at the examples in Examples/OoPhp
+ * TODO Have a look at the examples
  * TODO Start with DefineAndConst.php and Inheritance.php
  * TODO Then look at Methods.php and call_methods.php, that demonstrate, how to become fully PSR2 compliant.
  * TODO PSR2 compliance is not part of this exercise, but needed for those following.

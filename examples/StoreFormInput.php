@@ -42,11 +42,7 @@ class StoreFormInput
             PDO::MYSQL_ATTR_INIT_COMMAND => $charsetAttr,
             PDO::MYSQL_ATTR_MULTI_STATEMENTS => $multi
         );
-        try {
-            $this->dbh = new PDO($dsn, $mysqlUser, $mysqlPwd, $options);
-        } catch (PDOException $e) {
-            var_dump($e->errorInfo);
-        }
+        $this->dbh = new PDO($dsn, $mysqlUser, $mysqlPwd, $options);
         echo "<p>Connect to Database worked</p>";
     }
 
@@ -59,13 +55,9 @@ class StoreFormInput
         SQL;
         echo "<p>$query</p>";
         $params=array(':ip_address' => $_POST['ip_address']);
-        try {
-            if ($this->dbh) {
-                $this->stmt = $this->dbh->prepare($query);
-                $this->stmt->execute($params);
-            }
-        } catch (PDOException $e) {
-            var_dump($e->errorInfo);
+        if ($this->dbh) {
+            $this->stmt = $this->dbh->prepare($query);
+            $this->stmt->execute($params);
         }
     }
 
@@ -78,7 +70,6 @@ class StoreFormInput
         SQL;
         echo "<p>$query</p>";
         $params=array(':ip_address' => $_POST['ip_address']);
-        try {
             if ($this->dbh) {
                 $this->stmt = $this->dbh->prepare($query);
                 $this->result=$this->stmt->execute($params);
@@ -88,21 +79,24 @@ class StoreFormInput
                 echo $this->result[0]->ip_address;
                 // echo $this->result[0][0];
             }
-        } catch (PDOException $e) {
-            var_dump($e->errorInfo);
-        }
     }
 
     public function StoreAndRetrieve()
     {
         $this->Store();
-        echo "<p>Storing of Product Category worked";
+        echo "<p>Storing of IP address worked";
         $this->Retrieve();
-        echo "<p>Retrieving of Product Category worked";
+        echo "<p>Retrieving of IP address worked";
     }
 }
 $showFormInput = new StoreFormInput();
 if (isset($_POST['ip_address'])) {
-    $showFormInput->StoreAndRetrieve();
-
+    try {
+        $showFormInput->StoreAndRetrieve();
+    } catch ( PDOException $e ) {
+        var_dump($e);
+        echo '<table>';
+        print_r($e->xdebug_message);
+        echo '</table>';
+    }
 }
