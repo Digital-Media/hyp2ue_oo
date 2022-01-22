@@ -2,7 +2,7 @@
 
 ## Installation
 
-See [INSTALL.md] (https://Digial-Media/hm2ue_oo/INSTALL.md)
+See [INSTALL.md](https://github.com/Digital-Media/hyp2ue_oo/blob/main/INSTALL.md)
 
 ## Exercise
 
