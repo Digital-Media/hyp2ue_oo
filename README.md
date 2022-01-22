@@ -6,5 +6,6 @@ See [INSTALL.md](https://github.com/Digital-Media/hyp2ue_oo/blob/main/INSTALL.md
 
 ## Exercise
 
-1. Follow instructions in index.html and test it.
-2. Follow instructions in ShowFormInput.php and test it.
+1. See ./examples to get started.
+2. Follow instructions in index.html and test it.
+3. Follow instructions in ShowFormInput.php and test it.
