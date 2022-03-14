@@ -7,7 +7,7 @@ Open Powershell (PS) or other Terminal (prompt my be different then).
 See [fhooe-web-dock](https://github.com/Digital-Media/fhooe-web-dock)
 
 ```shell
-docker exec -it webapp /src/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/hyp2ue_oo.git"
+docker exec -it webapp /bin/bash -c "cd /var/www/html && git clone https://github.com/Digital-Media/hyp2ue_oo.git"
 ```
 
 ## Vagrant
