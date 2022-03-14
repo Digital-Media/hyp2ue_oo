@@ -25,8 +25,9 @@ class StoreFormInput
 {
     public function __construct()
     {
+        //works with images from https://github.com/Digital-Media/fhooe-web-dock/blob/main/docker-compose.fhooe.yml
         $charsetAttr="SET NAMES utf8 COLLATE utf8_general_ci";
-        $dsn="mysql:host=localhost;port=3306;dbname=onlineshop";
+        $dsn="mysql:host=db;port=3306;dbname=onlineshop";
         $mysqlUser="onlineshop";
         $mysqlPwd="geheim";
         $multi=false;
@@ -35,8 +36,8 @@ class StoreFormInput
             // This warning is shown on the web page if error_reporting=E_ALL is set in php.ini
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
             // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_NUM,
             // PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_BOTH,
             PDO::MYSQL_ATTR_INIT_COMMAND => $charsetAttr,
