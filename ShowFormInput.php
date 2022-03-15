@@ -34,19 +34,19 @@ require_once 'error_handling.php';
 
     /**
      * TODO Define a class constant
-     * TODO @see Examples/OoPhp/DefineAndConst.php
+     * TODO @see examples/DefineAndConst.php
      */
 
 
     /**
      * TODO Define a class property with scope public
-     * TODO @see Examples/OoPhp/PublicProtectedPrivateProperties.php
+     * TODO @see examples/PublicProtectedPrivateProperties.php
      */
 
 
     /**
      * TODO Define a constructor
-     * TODO @see Examples/OoPhp/DefindeAndConst.php
+     * TODO @see examples/DefindeAndConst.php
      */
 
 
@@ -66,7 +66,7 @@ require_once 'error_handling.php';
 
     /**
      * TODO Define a method with scope public
-     * TODO @see Examples/OoPhp/Inheritance.php
+     * TODO @see examples/Inheritance.php
      */
 
          // TODO Within the method
