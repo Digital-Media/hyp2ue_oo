@@ -6,7 +6,7 @@
  * @author  Martin Harrer <martin.harrer@fh-hagenberg.at>
  * @license MIT License
  */
-namespace phpintro\examples\oophp;
+namespace hyp2ue_oo\examples;
 
 require_once 'error_handling.php';
 require_once 'Methods.php';
