@@ -4,7 +4,7 @@
  *
  * @author Martin Harrer <martin.harrer@fh-hagenberg.at>
  */
-namespace phpintro\examples\oophp;
+namespace hyp2ue_oo\examples;
 
 /**
  * Class to demonstrate visibility of public, protected and private methods
