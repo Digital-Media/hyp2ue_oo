@@ -89,8 +89,11 @@ class StoreFormInput
         $this->Retrieve();
         echo "<p>Retrieving of IP address worked";
     }
+    // end of class
 }
+// initializing class
 $showFormInput = new StoreFormInput();
+// calling a method and use exception handling
 if (isset($_POST['ip_address'])) {
     try {
         $showFormInput->StoreAndRetrieve();
