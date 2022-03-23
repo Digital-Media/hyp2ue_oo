@@ -9,7 +9,7 @@
 <p>Learning OO PHP</p>
 <h2>Adding visit</h2>
 <form action="StoreFormInput.php" method="post">
-    <label for="ip_address">Product Category:</label>
+    <label for="ip_address">IP Address:</label>
     <input type="text" name="ip_address" id="ip_address" placeholder="insert an ipaddress">
     <button type="submit">Submit</button>
 </form>
