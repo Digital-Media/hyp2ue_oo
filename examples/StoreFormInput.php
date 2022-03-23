@@ -76,9 +76,11 @@ class StoreFormInput
                 $this->result=$this->stmt->execute($params);
                 $this->result = $this->stmt->fetchAll();
                 var_dump($this->result);
-                // echo $this->result[0]['ip_address'];
-                echo $this->result[0]->ip_address;
-                // echo $this->result[0][0];
+                // Fetch_mode is set in __construct()
+                // echo $this->result[0]['ip_address']; // ...FETCH_MODE = PDO::FETCH_ASSOC
+                echo $this->result[0]->ip_address;  // ...FETCH_MODE = PDO::FETCH_OBJ
+                // echo $this->result[0][0];  // ...FETCH_MODE = PDO::FETCH_NUM
+                // ..FETCH_MODE = PDO::FETCH_BOTH -> NUM and ASSOC should work
             }
     }
 
