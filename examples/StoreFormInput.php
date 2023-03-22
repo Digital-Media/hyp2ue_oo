@@ -94,11 +94,11 @@ class StoreFormInput
     // end of class
 }
 // initializing class
-$showFormInput = new StoreFormInput();
+$storeFormInput = new StoreFormInput();
 // calling a method and use exception handling
 if (isset($_POST['ip_address'])) {
     try {
-        $showFormInput->StoreAndRetrieve();
+        $storeFormInput->StoreAndRetrieve();
     } catch ( PDOException $e ) {
         var_dump($e);
         echo '<table>';
