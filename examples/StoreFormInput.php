@@ -23,6 +23,9 @@ require_once 'error_handling.php';
 
 class StoreFormInput
 {
+    public $dbh = null;
+    public $stmt = null;
+    public $result = null;
     public function __construct()
     {
         //works with images from https://github.com/Digital-Media/fhooe-web-dock/blob/main/docker-compose.fhooe.yml

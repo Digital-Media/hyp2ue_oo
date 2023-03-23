@@ -1,5 +1,8 @@
 <?php
 namespace hyp2ue_oo;
+
+use PDO;
+use PDOException;
 /**
  * This class should not be able to do more than printing the content of $_POST sent by index.html.
  * Additionally a class constant and a class property is defined.
@@ -20,8 +23,6 @@ require_once 'error_handling.php';
  *
  * TODO Define a class with a class name in StudlyCaps according to PSR1
  */
-
-
 
     //TODO Within this class
 
