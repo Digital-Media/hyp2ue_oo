@@ -27,19 +27,15 @@ require_once 'error_handling.php';
 
     /*
      * @see examples/StoreFormInput for a working example.
-     * Add methods and properties as needed to AddCountry.php to store and retrieve the data sent bei index.html
+     * Add methods and properties as needed to AddProductCategory.php to store and retrieve the data sent bei index.html
      */
 
 try {
 // TODO Erzeugen Sie ein erstes Objekt der Klasse
 // TODO Benennen sie das Objekt passend zur Klasse und zu PSR1 in camelCase.
-//    $addCountry = new AddCountry();
-
-//    $addCountry->Show();
 
 
 // TODO Call StoreAndRetrieve() and handle PDOExceptions here
-//    $addCountry->StoreAndRetrieve();
 } catch (Exception $e) {
     echo "<h1>Error Page for Debugging</h1>.";
     echo "<p><strong>Don't use that in a production environment!</strong></p>";
