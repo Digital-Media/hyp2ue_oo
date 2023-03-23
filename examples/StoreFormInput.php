@@ -16,8 +16,8 @@
 </body>
 </html>
 <?php
-use PDO;
-use PDOException;
+//use PDO;
+//use PDOException;
 
 require_once 'error_handling.php';
 
