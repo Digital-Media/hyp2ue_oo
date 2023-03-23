@@ -1,27 +1,22 @@
-<!-- TODO    DOCTYPE must be first line in html file -->
-<!-- TODO    head-Tag  -->
-<!-- TODO    @see hypue2_regex/examples/index.html, date.php -->
-<!-- TODO    charset definition + title  -->
-<!-- TODO    html+body-Tag  -->
-
-<h2>Implement basic HTML skeleton</h2>
-
-<p>Create a form with one input field</p>
-
-<!-- TODO    create a form tag -->
-<!-- TODO    method=post  -->
-<!-- TODO    action=ShowFormInput.php  -->
-<!-- TODO    label  -->
-<!-- TODO    create any kind of input field or a textarea field to send content to ShowFormInput.php -->
-<!-- TODO    create a submit Button.  -->
-<p> Objective of the task is to send input of the form to a PHP file and return the escaped input</p>
-<p> Completing the php-File ShowFormInput.php you should gather a first experience with programming object orientated PHP</p>
-
-<p><a href="https://validator.w3.org/" target="_blank">TODO: Validate the HTML code of index.html with "direct input" following this link.</a></p>
-</p> The output of the PHP file hasn't to be validated, because the requested var_dump() output doesn't give valid HTML.</p>
-
-<!-- TODO Complete the file ShowFormInput.php and send (echo, print) the $_POST-Array to the browser. -->
-
-<p>Create a second form with one input field for the lesson addCountry</p>
-
-<!-- TODO Complete the file StoreFormInput.php and store the content of $_POST-Array to the column onlineshop.country.product_category_name. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>OO PHP</title>
+</head>
+<body>
+<h1>OO PHP</h1>
+<p>Learning OO PHP</p>
+<h2>Place a html5 document containing a form with a normal input field here</h2>
+<!--     <form action="ShowFormInput.php" method="post">
+         <label for="product_category_name">Show Product Category:</label>
+         <input type="text" name="product_category_name" id="product_category_name1" placeholder="insert a product category">
+         <button type="submit">Submit</button>
+     </form> -->
+<form action="AddProductCategory.php" method="post">
+    <label for="product_category_name">Add Product Category to Database:</label>
+    <input type="text" name="product_category_name" id="product_category_name" placeholder="insert a product category">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
