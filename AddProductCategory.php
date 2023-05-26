@@ -4,13 +4,12 @@ namespace hyp2ue_oo;
 use PDO;
 use PDOException;
 /**
- * This class should not be able to do more than printing the content of $_POST sent by index.html.
- * Additionally a class constant and a class property is defined.
- * Both are printed in different context within and outside a class to see differences in the syntax.
- * An additional objective of this exercise is to understand the scope of class constants, class properties
- * and global constants like DEBUG and see differences in syntax.
+ * In this example we separate HTML and PHP code.
+ * To generate HTML sent to the client we use echo.
+ * Later this job will be done by templates.
  *
- * This class implements one method to process the content of $_POST and return it.
+ * TODO Look at the example StoreFormInput and implement storing and retrieving for the table onlineshop.product_category.
+ * TODO Move initializing the DB connection to the method DBConnect() and call it within __construct
  */
 
 /**
@@ -18,25 +17,21 @@ use PDOException;
  */
 require_once 'error_handling.php';
 
-/**
- * Defining the class
- *
- * TODO Define a class with a class name in StudlyCaps according to PSR1
- */
+class AddProductCategory
+{
+    public function __construct()
+    {
 
-    //TODO Within this class
+    }
+    public function StoreAndRetrieve() :void
+    {
 
-    /*
-     * @see examples/StoreFormInput for a working example.
-     * Add methods and properties as needed to AddProductCategory.php to store and retrieve the data sent bei index.html
-     */
-
+    }
+}
 try {
-// TODO Erzeugen Sie ein erstes Objekt der Klasse
-// TODO Benennen sie das Objekt passend zur Klasse und zu PSR1 in camelCase.
+    // TODO Initialize Class
+    // TODO Call StoreAndRetrieve() and handle PDOExceptions here
 
-
-// TODO Call StoreAndRetrieve() and handle PDOExceptions here
 } catch (Exception $e) {
     echo "<h1>Error Page for Debugging</h1>.";
     echo "<p><strong>Don't use that in a production environment!</strong></p>";
@@ -45,4 +40,3 @@ try {
     echo "<p>Code: " . $e->getCode() . "</p>";
     echo "<p>Trace: " . $e->getTraceAsString() . "</p>";
 }
-// At the end of a PHP file there is only a line break and no closing PHP processing instruction according to PSR2
